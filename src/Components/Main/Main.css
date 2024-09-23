@@ -1,0 +1,126 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 32% 68%;
+  height: 700px; /* Adjust based on your design */
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 40% 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    height: auto; /* Allow content to dictate height */
+  }
+}
+
+.column1,
+.column2 {
+  background-color: #1d1d1d;
+  position: relative;
+}
+
+.column1 {
+  border-radius: 15px 0 0 15px;
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.column2 {
+  border-radius: 0 15px 15px 0;
+  text-align: center;
+  height: 90%;
+  padding: 40px 20px; /* Adjusted padding for mobile */
+}
+
+.column2::after {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-bottom: 70px solid #1d1d1d;
+  border-right: 70px solid transparent;
+  transform: rotate(90deg);
+}
+
+.icon-container {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+  border-color: white;
+  background-color: #444;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.butn {
+  border: 1px solid white;
+  background-color: #1d1d1d; /* Adjust as needed */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Button-like behavior */
+  transition: transform 0.3s ease; /* Smooth transition */
+  padding: 14px 35px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners */
+  transform: rotateX(20deg); /* Default rotation */
+}
+
+.butn-presv {
+  perspective: 500px; /* Set perspective for 3D effect */
+}
+
+.skew:hover {
+  transform: rotateX(0deg);
+  background-color: white;
+  color: black; /* Return to normal on hover */
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Space between items */
+  }
+
+  .column1 {
+    margin-bottom: 20px;
+  }
+
+  .column2 {
+    padding: 20px; /* Reduced padding for mobile */
+  }
+
+  .icon-container {
+    width: 36px; /* Smaller icons for mobile */
+    height: 36px; /* Smaller icons for mobile */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  .flex {
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center; /* Center items */
+  }
+}
