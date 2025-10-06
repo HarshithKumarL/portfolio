@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 import CommonTemplate from "@/components/pages/CommonTemplate";
 import { getPageContent } from "@/store/api";
 
